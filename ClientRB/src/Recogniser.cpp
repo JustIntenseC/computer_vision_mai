@@ -7,7 +7,8 @@ Table FooRecogniser::recogniser(cv::Mat frame) {
 
     // Loading a classifier for human detection
     cv::CascadeClassifier human_cascade;
-    if (!human_cascade.load("haarcascade_fullbody.xml")) {
+	std::string cascadePath = std::string(CMAKE_CURRENT_BINARY_DIR) + "/Data/haarcascade_fullbody.xml";
+    if (!human_cascade.load(cascadePath)) {
         std::cerr << "Failed to load cascade classifier" << std::endl;
         table.setTable(tableData);
         return table;

@@ -79,7 +79,7 @@ void MainServer::ServerLow() {
 	server.Post("/string", [&](const httplib::Request& req, httplib::Response& res) {
 		try {
 			table = req.body;
-			std::cout << "RECEIVED: " << table;
+			std::cout << "RECEIVED: " << table << std::endl;
 		}
 		catch (const std::exception& e) {
 			std::cerr << "Exception caught: " << e.what() << std::endl;

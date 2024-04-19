@@ -40,7 +40,7 @@ bool Algorithms::Stop(std::string table) {
 
 int Algorithms::Recogniser(std::string table, std::vector<std::unordered_map<std::string, int>> line_data, std::vector<std::unordered_map<std::string, int>> right_line_data, std::vector<std::unordered_map<std::string, int>> left_line_data) {
 	if (right_line_data.empty() || left_line_data.empty()) {
-		std::cout << "Noun line\n";
+		std::cout << "Noun line\n" << std::endl;
 		return 4;
 	}
 	bool tab = Stop(table);
@@ -84,20 +84,20 @@ int Algorithms::Recogniser(std::string table, std::vector<std::unordered_map<std
 	}
 
 	if (degrees <= 5) {
-		std::cout << "Move Start " << degrees << std::endl;
+		std::cout << "Move Start " << degrees << "\n" << std::endl;
 		return 1;
 	}
 	else {
 		if ((stor == 2) && !tab) {
-			std::cout << "Move Right " << degrees << std::endl;
+			std::cout << "Move Right " << degrees << "\n" << std::endl;
 			return 2;
 		}
 		else if ((stor == 1) && !tab) {
-			std::cout << "Move Left " << degrees << std::endl;
+			std::cout << "Move Left " << degrees << "\n" << std::endl;
 			return 3;
 		}
 		else {
-			std::cout << "Move Stop\n";
+			std::cout << "Move Stop\n" << std::endl;
 			return 4;
 		}
 	}

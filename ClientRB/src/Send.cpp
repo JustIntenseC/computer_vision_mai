@@ -22,7 +22,7 @@ void Send::JsonSend(std::vector<cv::Vec4i>& lines, cv::Mat edges) {
 	httplib::Client cli("http://127.0.0.1:8080");
 	auto res = cli.Post("/lines", s.GetString(), "application/json");
 	if (res && res->status == 200) {
-		std::cout << "\n" << std::endl;
+		std::cout << "\n";
 	}
 	else {
 		std::cerr << "Request failed, error code: " << (res ? res->status : -1) << std::endl;
@@ -34,7 +34,7 @@ void Send::TableSend(std::string table) {
 	httplib::Client cli("http://127.0.0.1:8080");
 	auto res = cli.Post("/string", table, "text/plain");
 	if (res && res->status == 200) {
-		std::cout << "\n" << std::endl;
+		std::cout << "\n";
 	}
 	else {
 		std::cerr << "Request failed, error code: " << (res ? res->status : -1) << std::endl;
