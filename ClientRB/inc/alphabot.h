@@ -15,8 +15,13 @@ public:
         pinMode(ENA, OUTPUT);
         pinMode(ENB, OUTPUT);
     }
+	
     void forward();
+	
     void stop();
+	
     void left();
+	
     void right();
+	
 };
