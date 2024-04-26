@@ -7,7 +7,6 @@ set(CASCADE_FILE "${CMAKE_SOURCE_DIR}/../Data/haarcascade_fullbody.xml")
 # Копируем файл каскада в директорию сборки при сборке проекта
 file(COPY ${CASCADE_FILE} DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Data)
 
-set(OpenCV_DIR "D:/CV/opencv/build")
 find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 
