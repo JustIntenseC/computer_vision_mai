@@ -19,7 +19,7 @@ FetchContent_MakeAvailable(rapidjson)
 include_directories(${rapidjson_SOURCE_DIR}/include)
 
 # Добавление исполняемого файла
-add_executable(ClientRB src/main.cpp src/Application.cpp src/Clientget.cpp src/Recogniser.cpp src/Send.cpp src/Table.cpp)
+add_executable(ClientRB src/main.cpp src/Application.cpp src/Alphabot.cpp src/Clientget.cpp src/Recogniser.cpp src/Send.cpp src/Table.cpp)
 add_compile_definitions(CMAKE_CURRENT_BINARY_DIR="${CMAKE_CURRENT_BINARY_DIR}")
 
 # Подключение директории с заголовками
