@@ -1,6 +1,7 @@
 #include <application.h>
 #include <send.h>
 #include <clientget.h>
+#include <alphabot.h>
 
 int Application::process() {
 	Send send;
@@ -47,21 +48,22 @@ int Application::process() {
 
 void Application::run() {
 	ClientGet CG;
+	AlphaBot Bot;
 	std::string command;
 	while (1) {
 		int a = CG.GetCommand();
 		switch (a) {
 		case 1:
-			command = "Start";
+			Bot.forward();
 			break;
 		case 2:
-			command = "Right";
+			Bot.right();
 			break;
 		case 3:
-			command = "Left";
+			Bot.left();
 			break;
 		case 4:
-			command = "Stop";
+			Bot.stop();
 			break;
 		default:
 			break;

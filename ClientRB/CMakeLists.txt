@@ -27,4 +27,5 @@ add_compile_definitions(CMAKE_CURRENT_BINARY_DIR="${CMAKE_CURRENT_BINARY_DIR}")
 target_include_directories(ClientRB PUBLIC inc)
 
 # Поиск и подключение библиотек
-target_link_libraries(ClientRB ${OpenCV_LIBS} httplib)
+find_library(WIRINGPI_LIBRARIES NAMES wiringPi)
+target_link_libraries(ClientRB ${WIRINGPI_LIBRARIES} ${OpenCV_LIBS} httplib)
