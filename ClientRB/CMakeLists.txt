@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
 project(ClientRB)
 
+add_compile_options(-Wall -lwiringPi)
+
 # Указываем директорию с файлом каскада
 set(CASCADE_FILE "${CMAKE_SOURCE_DIR}/../Data/haarcascade_fullbody.xml")
 
