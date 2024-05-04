@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
 project(ClientRB)
 
-add_compile_options(-Wall -lwiringPi)
+find_package(WiringPi REQUIRED)
+find_package(Threads REQUIRED)
 
 # Указываем директорию с файлом каскада
 set(CASCADE_FILE "${CMAKE_SOURCE_DIR}/../Data/haarcascade_fullbody.xml")
@@ -28,5 +29,5 @@ add_compile_definitions(CMAKE_CURRENT_BINARY_DIR="${CMAKE_CURRENT_BINARY_DIR}")
 target_include_directories(ClientRB PUBLIC inc)
 
 # Поиск и подключение библиотек
-find_library(WIRINGPI_LIBRARIES NAMES wiringPi)
-target_link_libraries(ClientRB ${WIRINGPI_LIBRARIES} ${OpenCV_LIBS} httplib)
+include_directories(${WIRINGPI_INCLUDE_DIRS}) 
+target_link_libraries(ClientRB ${WIRINGPI_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} ${OpenCV_LIBS} httplib)
